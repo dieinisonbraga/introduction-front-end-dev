@@ -1,0 +1,12 @@
+<article class="listing">
+    <span>{{product.image}}</span>
+    <img
+        class="listing-photo"
+        [src]="product.image"
+        alt="Exterior photo of {{ product.title }}"
+        crossorigin
+    />
+    <h2 class="listing-heading">{{ product.title }}</h2>
+    <p class="listing-location">{{ product.description }} </p>
+    <a [routerLink]="['/details', product.id]">Details</a>
+</article>

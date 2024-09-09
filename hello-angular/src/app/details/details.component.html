@@ -1,0 +1,18 @@
+<article>
+    <img
+        class="listing-photo"
+        [src]="product?.image"
+        alt="Exterior photo of {{ product?.title }}"
+        crossorigin
+    />
+    <section class="listing-description">
+        <h2 class="listing-heading">{{ product?.description }}</h2>
+        <p class="listing-location">{{ product?.price }}, {{ product?.category }}</p>
+    </section>
+    <section class="listing-features">
+        <h2 class="section-heading">About this product</h2>
+        <ul>
+        <li>Units available: {{ product?.category }}</li>
+        </ul>
+    </section>
+</article>
