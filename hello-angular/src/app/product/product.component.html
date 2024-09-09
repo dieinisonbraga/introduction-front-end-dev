@@ -1,12 +1,21 @@
-<article class="listing">
-    <span>{{product.image}}</span>
+<article class="product">
+    <a [routerLink]="['/details', product.id]">
     <img
-        class="listing-photo"
         [src]="product.image"
         alt="Exterior photo of {{ product.title }}"
         crossorigin
     />
-    <h2 class="listing-heading">{{ product.title }}</h2>
-    <p class="listing-location">{{ product.description }} </p>
-    <a [routerLink]="['/details', product.id]">Details</a>
+    
+        <h2 class="title-product">{{ product.title }}</h2>
+    </a>
+    <h3 class="price-product">
+        R$ <span>{{product.price}}</span>
+    </h3>
+    <div class="quantity">
+        <span >Quantity:</span>
+        <button [disabled]="statusButton" class="minus" (click)="minus()">-</button>
+        <span>{{ quantity }}</span>
+        <button class="plus" (click)="plus()">+</button>
+    </div>
+    <button class="buy" (click)="buyProduct()">Buy</button>
 </article>
