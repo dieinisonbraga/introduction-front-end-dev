@@ -1,17 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Product } from '../product';
-import { ProductService } from './../product.service';
+import { ProductService } from '../product.service';
 import { ProductComponent } from '../product/product.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-product-list',
   standalone: true,
   imports: [CommonModule, ProductComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.scss'
 })
-export class HomeComponent {
+export class ProductListComponent {
   productList: Product[] = [];
   productService = inject(ProductService);
 
@@ -21,4 +21,5 @@ export class HomeComponent {
         this.productList = productList;
       });
   }
+
 }
